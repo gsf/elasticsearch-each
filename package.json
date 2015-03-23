@@ -1,6 +1,6 @@
 {
   "name": "elasticsearch-each",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "loop over documents in elasticsearch",
   "main": "index.js",
   "repository": "git@github.com:gsf/elasticsearch-each.git",
