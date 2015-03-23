@@ -1,6 +1,6 @@
 {
   "name": "elasticsearch-each",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "loop over documents in elasticsearch",
   "main": "index.js",
   "license": "ISC"
