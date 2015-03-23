@@ -13,12 +13,10 @@ module.exports = function each (options, callback) {
   scrollU.headers = {'Content-Type': 'application/x-www-form-urlencoded'};
 
   function scroll () {
-    console.log(scrollU);
     http.request(scrollU, function (res) {
       var data = '';
       res.on('data', function (chunk) {data += chunk});
       res.on('end', function () {
-        console.log(data);
         var result = JSON.parse(data);
         if (!result.hits.hits.length) return;
         result.hits.hits.forEach(function (doc) {
@@ -36,7 +34,6 @@ module.exports = function each (options, callback) {
     res.on('data', function (chunk) {data += chunk});
     res.on('end', function () {
       var result = JSON.parse(data);
-      console.log(data);
       if (result.error) return callback(Error(result.error));
       scrollId = result._scroll_id;
       scrollU.headers['Content-Length'] = Buffer.byteLength(scrollId);
