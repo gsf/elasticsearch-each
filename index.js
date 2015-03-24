@@ -9,8 +9,10 @@ module.exports = function each (options, callback) {
   var scrollId;
 
   u.path = u.path + '/_search?search_type=scan&scroll=10m&size=50';
+  u.method = 'POST';
   scrollU.path = '/_search/scroll?scroll=10m';
   scrollU.headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+  scrollU.method = 'POST';
 
   function scroll () {
     http.request(scrollU, function (res) {
